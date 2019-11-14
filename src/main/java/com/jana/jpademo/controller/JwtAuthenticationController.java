@@ -2,7 +2,7 @@ package com.jana.jpademo.controller;
 
 import com.jana.jpademo.model.JwtRequest;
 import com.jana.jpademo.model.JwtResponse;
-import com.jana.jpademo.service.JwtUserDetailsService;
+import com.jana.jpademo.service.UserService;
 import com.jana.jpademo.util.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class JwtAuthenticationController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private UserService userDetailsService;
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
